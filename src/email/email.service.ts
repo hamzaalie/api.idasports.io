@@ -19,7 +19,9 @@ export class EmailService {
     // Determine the correct frontend URL based on platform
     let baseUrl: string;
     if (platform === 'v1') {
-      baseUrl = this.configService.get('V1_URL') || 'http://localhost:3001';
+      const v1Url = this.configService.get('V1_URL') || 'http://localhost:3001';
+      // Handle multiple URLs separated by comma - use the first one
+      baseUrl = v1Url.split(',')[0].trim();
     } else {
       // Default to M3
       baseUrl = this.configService.get('M3_URL') || 'http://localhost:5173';
@@ -59,7 +61,10 @@ export class EmailService {
     email: string,
     token: string,
   ): Promise<boolean> {
-    const resetUrl = `${this.configService.get('V1_URL')}/reset-password?token=${token}`;
+    const v1Url = this.configService.get('V1_URL') || 'http://localhost:3001';
+    // Handle multiple URLs separated by comma - use the first one
+    const baseUrl = v1Url.split(',')[0].trim();
+    const resetUrl = `${baseUrl}/reset-password?token=${token}`;
 
     try {
       await this.mailerService.sendMail({
