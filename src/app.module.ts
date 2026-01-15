@@ -18,6 +18,7 @@ import { PlayersModule } from './players/players.module';
 import { MatchesModule } from './matches/matches.module';
 import { StatsModule } from './stats/stats.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { PacksModule } from './packs/packs.module';
 
 @Module({
   imports: [
@@ -76,6 +77,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     MatchesModule,
     StatsModule,
     DashboardModule,
+    PacksModule,
   ],
 })
 export class AppModule {}
