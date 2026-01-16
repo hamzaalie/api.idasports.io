@@ -4,58 +4,62 @@ import { Controller, Get } from '@nestjs/common';
 export class PacksController {
   @Get()
   async getAllPacks() {
-    // Return subscription plans in the old pack format
-    // These match the 3 plans we defined in subscriptions.controller.ts
+    // Return subscription plans in the format expected by v1 frontend
     return [
       {
-        _id: 'basic',
-        name: 'SCOUT BASIC',
+        id: 'scout-basic',
+        title: 'SCOUT BASIC',
         price: 19,
+        currency: '$',
         period: 'mois',
         option: 'local',
+        roleId: 2,
+        target: 'packages.basic.target',
+        description: 'Perfect for users who need to check facts or see basic info',
         features: [
-          'Access to player database',
-          'Basic search filters',
-          'View player profiles',
-          'Export up to 10 players/month',
-          'Email support'
-        ],
-        description: 'Perfect for amateur scouts and fans'
+          'packages.basic.feature1',
+          'packages.basic.feature2',
+          'packages.basic.feature3',
+          'packages.basic.feature4',
+          'packages.basic.feature5'
+        ]
       },
       {
-        _id: 'pro',
-        name: 'SCOUT PRO',
+        id: 'scout-pro',
+        title: 'SCOUT PRO',
         price: 49,
+        currency: '$',
         period: 'mois',
         option: 'local',
+        roleId: 2,
+        target: 'packages.pro.target',
+        description: 'The Full Software Experience with videos and advanced stats',
         features: [
-          'Everything in Basic',
-          'Advanced search filters',
-          'Detailed player statistics',
-          'Export up to 100 players/month',
-          'Video highlights access',
-          'Priority email support',
-          'Custom reports'
-        ],
-        description: 'For professional scouts and analysts'
+          'packages.pro.feature1',
+          'packages.pro.feature2',
+          'packages.pro.feature3',
+          'packages.pro.feature4',
+          'packages.pro.feature5',
+          'packages.pro.feature6'
+        ]
       },
       {
-        _id: 'partner',
-        name: 'CLUB PARTNER',
+        id: 'club-partner',
+        title: 'CLUB PARTNER',
         price: 149,
+        currency: '$',
         period: 'mois',
         option: 'local',
+        roleId: 2,
+        target: 'packages.partner.target',
+        description: 'Service-Led solution with dedicated support and priority access',
         features: [
-          'Everything in Pro',
-          'Unlimited player exports',
-          'API access',
-          'Multi-user accounts',
-          'Dedicated account manager',
-          '24/7 phone support',
-          'Custom integrations',
-          'White-label options'
-        ],
-        description: 'For clubs and agencies'
+          'packages.partner.feature1',
+          'packages.partner.feature2',
+          'packages.partner.feature3',
+          'packages.partner.feature4',
+          'packages.partner.feature5'
+        ]
       }
     ];
   }

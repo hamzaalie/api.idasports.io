@@ -14,28 +14,53 @@ export class SubscriptionsController {
     return {
       plans: [
         {
-          id: 'monthly',
-          name: 'Monthly Plan',
-          price: 9.99,
-          currency: 'USD',
+          id: 'scout-basic',
+          name: 'SCOUT BASIC',
+          price: 19,
+          currency: '$',
+          period: 'mois',
           duration: 30,
-          features: ['Access to M3 platform', 'Basic scouting tools', 'Email support']
+          target: 'packages.basic.target',
+          features: [
+            'packages.basic.feature1',
+            'packages.basic.feature2',
+            'packages.basic.feature3',
+            'packages.basic.feature4',
+            'packages.basic.feature5'
+          ]
         },
         {
-          id: 'quarterly',
-          name: 'Quarterly Plan',
-          price: 24.99,
-          currency: 'USD',
-          duration: 90,
-          features: ['Access to M3 platform', 'Advanced scouting tools', 'Priority support', '15% discount']
+          id: 'scout-pro',
+          name: 'SCOUT PRO',
+          price: 49,
+          currency: '$',
+          period: 'mois',
+          duration: 30,
+          target: 'packages.pro.target',
+          features: [
+            'packages.pro.feature1',
+            'packages.pro.feature2',
+            'packages.pro.feature3',
+            'packages.pro.feature4',
+            'packages.pro.feature5',
+            'packages.pro.feature6'
+          ]
         },
         {
-          id: 'annual',
-          name: 'Annual Plan',
-          price: 89.99,
-          currency: 'USD',
-          duration: 365,
-          features: ['Access to M3 platform', 'Premium scouting tools', 'Dedicated support', '25% discount', 'Early access to new features']
+          id: 'club-partner',
+          name: 'CLUB PARTNER',
+          price: 149,
+          currency: '$',
+          period: 'mois',
+          duration: 30,
+          target: 'packages.partner.target',
+          features: [
+            'packages.partner.feature1',
+            'packages.partner.feature2',
+            'packages.partner.feature3',
+            'packages.partner.feature4',
+            'packages.partner.feature5'
+          ]
         }
       ]
     };
